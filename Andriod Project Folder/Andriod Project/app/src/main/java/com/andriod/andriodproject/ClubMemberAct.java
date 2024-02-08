@@ -45,7 +45,7 @@ public class ClubMemberAct extends AppCompatActivity {
             public void onResponse(Call<List<ClubModel>> call, Response<List<ClubModel>> response) {
 
                 if(response.isSuccessful()){
-                    List<ClubModel> memberList = response.body();
+                   memberList = response.body();
                     adepter = new ClubAdepter(memberList, getApplicationContext());
                     recyclerView.setAdapter(adepter);
                 }

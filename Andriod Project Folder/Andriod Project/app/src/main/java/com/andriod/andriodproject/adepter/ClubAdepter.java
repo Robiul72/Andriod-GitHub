@@ -65,16 +65,15 @@ public class ClubAdepter extends RecyclerView.Adapter<ClubAdepter.MemberViewHold
         private TextView districtPositionTextView;
         private TextView cellTextView;
         private TextView emailTextView;
+
         private ImageView memberImage;
-        private ImageView spouseImag;
+        private ImageView spouseImage;
         private ImageView callButton;
         private ImageView emailButton;
         private ImageView textButton;
 
         public MemberViewHolder(@NonNull View itemView){
-
             super(itemView);
-
             nameTextView=itemView.findViewById(R.id.name);
             clubPositionTextView=itemView.findViewById(R.id.clubPosition);
             address1TextView=itemView.findViewById(R.id.address1);
@@ -94,7 +93,7 @@ public class ClubAdepter extends RecyclerView.Adapter<ClubAdepter.MemberViewHold
 
 
             memberImage=itemView.findViewById(R.id.memberImage);
-            memberImage=itemView.findViewById(R.id.spouseImage);
+            spouseImage=itemView.findViewById(R.id.spouseImage);
         }
 
 
@@ -114,15 +113,15 @@ public class ClubAdepter extends RecyclerView.Adapter<ClubAdepter.MemberViewHold
             districtPositionTextView.setText("Name : " +member.getBloodGroup());
 
            String relativeImagePathmember = member.getMemberImage();
-           String baseUrlmember = "hhtp://purbachal.emranhss.com/";
+           String baseUrlmember = "https://purbachal.emranhss.com/";
            String imageUrlmember = baseUrlmember + relativeImagePathmember;
 
            String relativeImagePathspaouse = member.getSpouseImage();
-           String baseUrlspaouse = "hhtp://purbachal.emranhss.com/";
+           String baseUrlspaouse = "https://purbachal.emranhss.com/";
            String imageUrlspaouse = baseUrlspaouse + relativeImagePathspaouse;
 
            Picasso.get().load(imageUrlmember).into(memberImage);
-           Picasso.get().load(imageUrlspaouse).into(spouseImag);
+           Picasso.get().load(imageUrlspaouse).into(spouseImage);
 
 
            callButton.setOnClickListener(v->{
